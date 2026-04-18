@@ -78,7 +78,7 @@ class PosCheckoutService
     protected function generateKode(): string
     {
         do {
-            $kode = 'PJL-' . now()->format('Ymd-His') . '-' . random_int(100, 999);
+            $kode = 'PJL-' . now()->format('mdHi') . '-' . str_pad(random_int(1, 999), 3, '0', STR_PAD_LEFT);
         } while (Penjualan::query()->where('penjualan_kode', $kode)->exists());
 
         return $kode;

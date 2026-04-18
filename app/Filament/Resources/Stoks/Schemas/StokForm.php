@@ -14,11 +14,9 @@ class StokForm
     {
         return $schema
             ->components([
-                Select::make('barang.barang_nama')
+                Select::make('barang_id')
                     ->label('Nama Barang')
-                    ->options(function () {
-                        return \App\Models\Barang::pluck('barang_nama', 'barang_id');
-                    })
+                    ->relationship('barang', 'barang_nama')
                     ->required(),
                 Select::make('supplier_id')
                     ->label('Supplier')
