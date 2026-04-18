@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Penjualans;
 use App\Filament\Resources\Penjualans\Pages\CreatePenjualan;
 use App\Filament\Resources\Penjualans\Pages\EditPenjualan;
 use App\Filament\Resources\Penjualans\Pages\ListPenjualans;
+use App\Filament\Resources\Penjualans\Pages\ViewPenjualan;
 use App\Filament\Resources\Penjualans\Schemas\PenjualanForm;
 use App\Filament\Resources\Penjualans\Tables\PenjualansTable;
 use App\Models\Penjualan;
@@ -45,6 +46,7 @@ class PenjualanResource extends Resource
     {
         return [
             'index' => ListPenjualans::route('/'),
+            'view' => ViewPenjualan::route('/{record}'),
         ];
     }
 

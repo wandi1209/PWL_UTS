@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Penjualans\Tables;
 
+use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
@@ -35,7 +36,8 @@ class PenjualansTable
                 //
             ])
             ->recordActions([
-                // Histori read-only, tidak ada aksi edit/delete
+                ViewAction::make()
+                    ->label('Lihat Detail'),
             ])
             ->toolbarActions([
                 // Histori read-only, tidak ada aksi bulk
