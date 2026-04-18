@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Barangs\Schemas;
 
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Section;
@@ -16,6 +17,12 @@ class BarangForm
                 Section::make('Informasi Barang')
                     ->icon('heroicon-o-information-circle')
                     ->schema([
+                        FileUpload::make('foto')
+                            ->label('Foto Barang')
+                            ->disk('public')
+                            ->directory('foto-barang')
+                            ->image()
+                            ->nullable(),
                         TextInput::make('barang_kode')
                             ->label('Kode Barang')
                             ->required()

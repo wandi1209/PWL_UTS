@@ -6,6 +6,7 @@ use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Table;
 
 class BarangsTable
@@ -33,6 +34,10 @@ class BarangsTable
                     ->label('Harga Beli')
                     ->numeric()
                     ->sortable(),
+                ImageColumn::make('foto')
+                    ->label('Foto')
+                    ->square()
+                    ->disk('public'),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
